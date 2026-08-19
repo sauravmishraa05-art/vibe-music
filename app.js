@@ -3,6 +3,7 @@ const vibes=[
   ["Pala Satake","Your Artist","audio/Pala Satake.mp3"],
   ["Raja Ji","Your Artist","audio/Raja Ji.mp3"],
   ["Dhamaka","Your Artist","audio/Dhamaka.mp3"],
+  ["Babuaan","Pawan Singh","audio/Babuaan.mp3"],
 ]},  
 {name:"Haryanvi",emoji:"🟡",songs:[["Haryanvi Vibe 01","Your Artist","audio/haryanvi-01.mp3"],["Haryanvi Vibe 02","Your Artist","audio/haryanvi-02.mp3"]]},
 {name:"Punjabi",emoji:"🔵",songs:[["Punjabi Vibe 01","Your Artist","audio/punjabi-01.mp3"],["Punjabi Vibe 02","Your Artist","audio/punjabi-02.mp3"]]},
