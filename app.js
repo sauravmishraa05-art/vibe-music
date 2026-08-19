@@ -1,7 +1,5 @@
 const vibes=[
 {name:"Bhojpuri",emoji:"🔴",songs:[
-  ["Bhojpuri Vibe 01","Your Artist","audio/bhojpuri-01.mp3"],
-  ["Bhojpuri Vibe 02","Your Artist","audio/bhojpuri-02.mp3"],
   ["Pala Satake","Your Artist","audio/Pala Satake.mp3"],
   ["Raja Ji","Your Artist","audio/Raja Ji.mp3"],
   ["Dhamaka","Your Artist","audio/Dhamaka.mp3"],
