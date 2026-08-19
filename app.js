@@ -2,8 +2,8 @@ const vibes=[
 {name:"Bhojpuri",emoji:"🔴",songs:[
   ["Bhojpuri Vibe 01","Your Artist","audio/bhojpuri-01.mp3"],
   ["Bhojpuri Vibe 02","Your Artist","audio/bhojpuri-02.mp3"],
-  ["Pala Satake","Your Artist","audio/Pala Satake.mp3"]
-  ["Raja Ji","Your Artist","audio/Raja Ji.mp3"]
+  ["Pala Satake","Your Artist","audio/Pala Satake.mp3"],
+  ["Raja Ji","Your Artist","audio/Raja Ji.mp3"],
 ]},  
 {name:"Haryanvi",emoji:"🟡",songs:[["Haryanvi Vibe 01","Your Artist","audio/haryanvi-01.mp3"],["Haryanvi Vibe 02","Your Artist","audio/haryanvi-02.mp3"]]},
 {name:"Punjabi",emoji:"🔵",songs:[["Punjabi Vibe 01","Your Artist","audio/punjabi-01.mp3"],["Punjabi Vibe 02","Your Artist","audio/punjabi-02.mp3"]]},
