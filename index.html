@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VIBE — Music for Every Mood</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="noise"></div>
+<main>
+  <header><div class="logo">VIBE<span>●</span></div><button id="share">↗ Share</button></header>
+
+  <section class="hero">
+    <p class="eyebrow">WHAT ARE YOU FEELING?</p>
+    <h1>Pick a vibe.<br><i>Press play.</i></h1>
+    <p class="sub">A tiny music room for every mood.</p>
+  </section>
+
+  <section id="vibes" class="vibes"></section>
+
+  <section class="player" id="player">
+    <div class="cover" id="cover">♪</div>
+    <div class="track">
+      <div class="now">NOW PLAYING</div>
+      <h2 id="title">Choose a vibe</h2><p id="artist">Your playlist is waiting.</p>
+      <input id="progress" type="range" min="0" max="100" value="0">
+      <div class="time"><span id="current">0:00</span><span id="duration">0:00</span></div>
+    </div>
+    <div class="controls">
+      <button id="prev">⏮</button><button class="play" id="play">▶</button><button id="next">⏭</button>
+    </div>
+  </section>
+
+  <section class="list">
+    <div class="listhead"><span id="listName">Featured</span><span id="count">0 tracks</span></div>
+    <div id="songs"></div>
+  </section>
+</main>
+<audio id="audio"></audio>
+<script src="app.js"></script>
+</body>
+</html>
