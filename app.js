@@ -5,7 +5,7 @@ const vibes=[
   ["Dhamaka","Your Artist","audio/Dhamaka.mp3"],
   ["Babuaan","Pawan Singh","audio/Babuaan.mp3"],
 ]},  
-{name:"Haryanvi",emoji:"🟡",songs:},
+{name:"Haryanvi",emoji:"🟡",songs:{name:"Haryanvi",emoji:"🟡",songs:[["Haryanvi Vibe 01","Your Artist","audio/haryanvi-01.mp3"],["Haryanvi Vibe 02","Your Artist","audio/haryanvi-02.mp3"]]},
 {name:"Punjabi",emoji:"🔵",songs:[["Punjabi Vibe 01","Your Artist","audio/punjabi-01.mp3"],["Punjabi Vibe 02","Your Artist","audio/punjabi-02.mp3"]]},
 {name:"Hindi",emoji:"🟣",songs:[["Hindi Vibe 01","Your Artist","audio/hindi-01.mp3"],["Hindi Vibe 02","Your Artist","audio/hindi-02.mp3"]]},
 {name:"Gym",emoji:"🔴",songs:[["Beast Mode 01","Your Artist","audio/gym-01.mp3"],["Beast Mode 02","Your Artist","audio/gym-02.mp3"]]},
