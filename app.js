@@ -4,6 +4,16 @@ const vibes=[
   ["Raja Ji","Your Artist","audio/Raja Ji.mp3"],
   ["Dhamaka","Your Artist","audio/Dhamaka.mp3"],
   ["Babuaan","Pawan Singh","audio/Babuaan.mp3"],
+  ["Samiyana","Pawan Singh","audio/Samiyana.mp3"],
+  ["Patti Kamariya","Antra Singh Priyanka","audio/Patti Kamariya.mp3"],
+  ["King VS Queen","Your Artist","audio/King_VS_Queen.mp3"],
+  ["Aaho Raja","Your Artist","audio/Aaho Raja.mp3"],
+  ["Patna Ke Daku","Your Artist","audio/Patna Ke Daku.mp3"],
+  ["E Dhan Licensee Bate","Your Artist","audio/E Dhan Licensee Bate.mp3"],
+  ["Kamariya Pa Kata","Your Artist","audio/Kamariya Pa Kata.mp3"],
+  ["JanuabSe Jeet Jai","Your Artist","audio/JanuabSe Jeet Jai.mp3"],
+  ["Case Teri Rani Ladegi","Your Artist","audio/Case Teri Rani Ladegi.mp3"],
+  ["Lut Gayani Pyaar Mai","Your Artist","audio/Lut Gayani Pyaar Mai.mp3"]
 ]}, 
 {name:"Haryanvi",emoji:"🟡",songs:[
 ]},
