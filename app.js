@@ -8,11 +8,11 @@ const vibes=[
 {name:"Haryanvi",emoji:"🟡",songs:[
 ]},
 {name:"Punjabi",emoji:"🔵",songs:[]},
-{name:"Hindi",emoji:"🟣",songs:[["Hindi Vibe 01","Your Artist","audio/hindi-01.mp3"],["Hindi Vibe 02","Your Artist","audio/hindi-02.mp3"]]},
-{name:"Gym",emoji:"🔴",songs:[["Beast Mode 01","Your Artist","audio/gym-01.mp3"],["Beast Mode 02","Your Artist","audio/gym-02.mp3"]]},
-{name:"Sad",emoji:"🌙",songs:[["Late Night 01","Your Artist","audio/sad-01.mp3"],["Late Night 02","Your Artist","audio/sad-02.mp3"]]},
-{name:"Romantic",emoji:"💗",songs:[["Love Vibe 01","Your Artist","audio/romantic-01.mp3"],["Love Vibe 02","Your Artist","audio/romantic-02.mp3"]]},
-{name:"Party",emoji:"⚡",songs:[["Party Vibe 01","Your Artist","audio/party-01.mp3"],["Party Vibe 02","Your Artist","audio/party-02.mp3"]]}
+{name:"Hindi",emoji:"🟣",songs:[]},
+{name:"Gym",emoji:"🔴",songs:[]},
+{name:"Sad",emoji:"🌙",songs:[]},
+{name:"Romantic",emoji:"💗",songs:[]},
+{name:"Party",emoji:"⚡",songs:[]}
 ];
 const audio=document.querySelector("#audio"), vibesEl=document.querySelector("#vibes"), songsEl=document.querySelector("#songs");
 let currentVibe=0,currentSong=0;
