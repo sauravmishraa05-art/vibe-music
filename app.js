@@ -5,7 +5,7 @@ const vibes=[
   ["Dhamaka","Your Artist","audio/Dhamaka.mp3"],
   ["Babuaan","Pawan Singh","audio/Babuaan.mp3"],
   ["Samiyana","Pawan Singh","audio/Samiyana.mp3"],
-  ["Pati Kamariya","Antra Singh Priyanka","audio/Pati Kamariya.mp3"],
+  ["Patli Kamariya","Antra Singh Priyanka","audio/Patli Kamariya.mp3"],
   ["King VS Queen","Your Artist","audio/King_VS_Queen.mp3"],
   ["Aaho Raja","Your Artist","audio/Aaho Raja.mp3"],
   ]}, 
