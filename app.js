@@ -7,7 +7,7 @@ const vibes=[
 ]}, 
 {name:"Haryanvi",emoji:"🟡",songs:[
 ]},
-{name:"Punjabi",emoji:"🔵",songs:[["Punjabi Vibe 01","Your Artist","audio/punjabi-01.mp3"],["Punjabi Vibe 02","Your Artist","audio/punjabi-02.mp3"]]},
+{name:"Punjabi",emoji:"🔵",songs:[]},
 {name:"Hindi",emoji:"🟣",songs:[["Hindi Vibe 01","Your Artist","audio/hindi-01.mp3"],["Hindi Vibe 02","Your Artist","audio/hindi-02.mp3"]]},
 {name:"Gym",emoji:"🔴",songs:[["Beast Mode 01","Your Artist","audio/gym-01.mp3"],["Beast Mode 02","Your Artist","audio/gym-02.mp3"]]},
 {name:"Sad",emoji:"🌙",songs:[["Late Night 01","Your Artist","audio/sad-01.mp3"],["Late Night 02","Your Artist","audio/sad-02.mp3"]]},
