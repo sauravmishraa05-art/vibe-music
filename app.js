@@ -5,7 +5,6 @@ const vibes=[
   ["Dhamaka","Your Artist","audio/Dhamaka.mp3"],
   ["Babuaan","Pawan Singh","audio/Babuaan.mp3"],
   ["Samiyana","Pawan Singh","audio/Samiyana.mp3"],
-  ["patli kamariya","pawan","audio/patli kamariya.mp3"],
   ]}, 
 {name:"Haryanvi",emoji:"🟡",songs:[
 ]},
