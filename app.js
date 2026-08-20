@@ -8,6 +8,9 @@ const vibes=[
   ["Patli Kamariya","Antra Singh Priyanka","audio/Patli Kamariya.mp3"],
   ["King VS Queen","Your Artist","audio/King_VS_Queen.mp3"],
   ["Aaho Raja","Your Artist","audio/Aaho Raja.mp3"],
+  ["Patna Ke Daku","Your Artist","audio/Patna Ke Daku.mp3"],
+  ["E Dhan Licensee Bate","Your Artist","audio/E Dhan Licensee Bate.mp3"],
+  ["Kamariya Pa Kata","Your Artist","audio/Kamariya Pa Kata.mp3"],
   ]}, 
 {name:"Haryanvi",emoji:"🟡",songs:[
 ]},
