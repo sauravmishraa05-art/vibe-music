@@ -31,7 +31,12 @@ const vibes=[
   ["Vakaalat","Your Artist","audio/Vakaalat.mp3"],
   ["Blender","Your Artist","audio/Blender.mp3"],
   ["4 Aadmi","Your Artist","audio/4 Aadmi.mp3"],
-  ["Naami Gunde","Your Artist","audio/Naami Gunde.mp3"]
+  ["Naami Gunde","Your Artist","audio/Naami Gunde.mp3"],
+  ["Number Plate Refixed Beretta","Your Artist","audio/Number Plate Refixed Beretta.mp3"],
+  ["Warrning","Your Artist","audio/Warrning.mp3"],
+  ["No Time","Your Artist","audio/No Time.mp3"],
+  ["2 Ghode","Your Artist","audio/2 Ghode.mp3"],
+  ["Rola Yaara Kaa","Your Artist","audio/Rola Yaara Kaa.mp3"]
 ]},
 {name:"Punjabi",emoji:"🔵",songs:[]},
 {name:"Hindi",emoji:"🟣",songs:[]},
