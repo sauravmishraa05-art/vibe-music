@@ -23,7 +23,7 @@ const vibes=[
   ["Gaadi 150","Your Artist","audio/Gaadi 150.mp3"],
   ["Madam Ji","Your Artist","audio/Madam Ji.mp3"],
   ["Bau Ji","Your Artist","audio/Bau Ji.mp3"],
-  ["Cheli","Your Artist","audio/Cheli.mp3"]
+  ["Cheli","Your Artist","audio/Cheli.mp3"],
 ]},
 {name:"Punjabi",emoji:"🔵",songs:[]},
 {name:"Hindi",emoji:"🟣",songs:[]},
