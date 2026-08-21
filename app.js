@@ -1,6 +1,6 @@
 const vibes=[
 {name:"Bhojpuri",emoji:"🔴",songs:[
-  ["Pala Satake","Your Artist","audio/Pala Satake.mp3"],
+  ["Pala Satake","Vikram Jha","audio/Pala Satake.mp3"],
   ["Raja Ji","Your Artist","audio/Raja Ji.mp3"],
   ["Dhamaka","Your Artist","audio/Dhamaka.mp3"],
   ["Babuaan","Pawan Singh","audio/Babuaan.mp3"],
