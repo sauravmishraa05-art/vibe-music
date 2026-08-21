@@ -20,6 +20,10 @@ const vibes=[
   ["Mukadma","Your Artist","audio/Mukadma.mp3"],
   ["Pistol Premi","Your Artist","audio/Pistol Premi.mp3"],
   ["Rohtak 3","Your Artist","audio/Rohtak 3.mp3"]
+  ["Gaadi 150","Your Artist","audio/Gaadi 150.mp3"],
+  ["Madam Ji","Your Artist","audio/Madam Ji.mp3"],
+  ["Bau Ji","Your Artist","audio/Bau Ji.mp3"],
+  ["Cheli","Your Artist","audio/Cheli.mp3"]
 ]},
 {name:"Punjabi",emoji:"🔵",songs:[]},
 {name:"Hindi",emoji:"🟣",songs:[]},
