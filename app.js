@@ -36,7 +36,10 @@ const vibes=[
   ["Warrning","Your Artist","audio/Warrning.mp3"],
   ["No Time","Your Artist","audio/No Time.mp3"],
   ["2 Ghode","Your Artist","audio/2 Ghode.mp3"],
-  ["Rola Yaara Kaa","Your Artist","audio/Rola Yaara Kaa.mp3"]
+  ["Rola Yaara Kaa","Your Artist","audio/Rola Yaara Kaa.mp3"],
+  ["Shoot Da Order Shooter","Your Artist","audio/Shoot Da Order Shooter.mp3"],
+  ["Kabze","Your Artist","audio/Kabze.mp3"],
+  ["Gundya Ki Rani","Your Artist","audio/Gundya Ki Rani.mp3"]
 ]},
 {name:"Punjabi",emoji:"🔵",songs:[]},
 {name:"Hindi",emoji:"🟣",songs:[]},
