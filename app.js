@@ -25,7 +25,8 @@ const vibes=[
   ["Bau Ji","Your Artist","audio/Bau Ji.mp3"],
   ["Cheli","Your Artist","audio/Cheli.mp3"],
   ["CIRCLE","Your Artist","audio/CIRCLE.mp3"],
-  ["La La La","Your Artist","audio/La La La.mp3"]
+  ["La La La","Your Artist","audio/La La La.mp3"],
+  ["Degree","your Artist","audio/Degree.mp3"]
 ]},
 {name:"Punjabi",emoji:"🔵",songs:[]},
 {name:"Hindi",emoji:"🟣",songs:[]},
