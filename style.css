@@ -1,10 +1,411 @@
-*{box-sizing:border-box}body{margin:0;background:#090909;color:#f5f5f5;font-family:Inter,system-ui,-apple-system,sans-serif;min-height:100vh}.noise{position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}main{max-width:1050px;margin:auto;padding:28px 22px 70px}header{display:flex;justify-content:space-between;align-items:center}.logo{font-weight:900;letter-spacing:-1px;font-size:22px}.logo span{font-size:11px;margin-left:3px}button{border:0;color:inherit;background:#151515;border-radius:999px;padding:10px 16px;cursor:pointer}#share:hover{background:#242424}.hero{padding:90px 0 42px}.eyebrow,.now{font-size:11px;letter-spacing:2px;color:#8c8c8c;font-weight:700}.hero h1{font-size:clamp(48px,9vw,100px);line-height:.9;letter-spacing:-6px;margin:15px 0}.hero h1 i{color:#777}.sub{color:#8a8a8a}.vibes{display:flex;gap:10px;flex-wrap:wrap}.vibe{padding:14px 18px;background:#141414;border:1px solid #222;font-size:15px}.vibe.active{background:#f5f5f5;color:#090909}.player{margin-top:35px;padding:18px;border:1px solid #242424;background:#101010;border-radius:20px;display:grid;grid-template-columns:70px 1fr auto;gap:18px;align-items:center}.cover{width:70px;height:70px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#222,#555);font-size:28px}.track h2{margin:5px 0 2px;font-size:19px}.track p{margin:0 0 13px;color:#777;font-size:13px}.track input{width:100%;accent-color:#fff}.time{display:flex;justify-content:space-between;color:#666;font-size:10px}.controls{display:flex;gap:6px;align-items:center}.controls button{font-size:18px;padding:10px}.controls .play{width:48px;height:48px;background:#f5f5f5;color:#090909}.list{margin-top:35px}.listhead{display:flex;justify-content:space-between;color:#aaa;margin-bottom:8px}.listhead span:first-child{color:#fff;font-weight:700}.song{display:grid;grid-template-columns:45px 1fr auto;align-items:center;padding:15px 8px;border-bottom:1px solid #191919;cursor:pointer}.song:hover{background:#111}.num{color:#666;font-size:12px}.song b{font-size:14px}.song small{display:block;color:#666;margin-top:3px}.song .arrow{color:#555}@media(max-width:650px){main{padding:20px 15px 55px}.hero{padding:70px 0 35px}.hero h1{letter-spacing:-3px}.player{grid-template-columns:58px 1fr}.cover{width:58px;height:58px}.controls{grid-column:1/-1;justify-content:center}.controls button{padding:8px}.controls .play{width:44px;height:44px}}
-.credit {
-  font-size: 12px;
-  opacity: 0.55;
-  margin-left: auto;
-  margin-right: 12px;
+*{
+  box-sizing:border-box;
 }
+
+body{
+  margin:0;
+  background:#090909;
+  color:#f5f5f5;
+  font-family:Inter,system-ui,-apple-system,sans-serif;
+  min-height:100vh;
+}
+
+.noise{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+main{
+  max-width:1050px;
+  margin:auto;
+  padding:28px 22px 120px;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-weight:900;
+  letter-spacing:-1px;
+  font-size:22px;
+}
+
+.logo span{
+  font-size:11px;
+  margin-left:3px;
+}
+
+button{
+  border:0;
+  color:inherit;
+  background:#151515;
+  border-radius:999px;
+  padding:10px 16px;
+  cursor:pointer;
+}
+
+button:active{
+  transform:scale(.96);
+}
+
+#share:hover{
+  background:#242424;
+}
+
+.hero{
+  padding:90px 0 42px;
+}
+
+.eyebrow,
+.now{
+  font-size:11px;
+  letter-spacing:2px;
+  color:#8c8c8c;
+  font-weight:700;
+}
+
+.hero h1{
+  font-size:clamp(48px,9vw,100px);
+  line-height:.9;
+  letter-spacing:-6px;
+  margin:15px 0;
+}
+
+.hero h1 i{
+  color:#777;
+}
+
+.sub{
+  color:#8a8a8a;
+}
+
+.vibes{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.vibe{
+  padding:14px 18px;
+  background:#141414;
+  border:1px solid #222;
+  font-size:15px;
+}
+
+.vibe.active{
+  background:#f5f5f5;
+  color:#090909;
+}
+
+/* =========================
+   SPOTIFY STYLE PLAYER
+========================= */
+
+.player{
+  position:fixed;
+  z-index:1000;
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:82px;
+  padding:10px 22px;
+
+  background:rgba(25,18,22,.97);
+  backdrop-filter:blur(20px);
+
+  border-top:1px solid rgba(255,255,255,.08);
+
+  display:grid;
+  grid-template-columns:65px 1fr auto;
+  gap:14px;
+  align-items:center;
+
+  margin:0;
+  border-radius:0;
+
+  box-shadow:0 -10px 35px rgba(0,0,0,.35);
+
+  cursor:pointer;
+}
+
+/* cover */
+
+.cover{
+  width:62px;
+  height:62px;
+  border-radius:7px;
+
+  display:grid;
+  place-items:center;
+
+  background:linear-gradient(135deg,#222,#555);
+
+  font-size:25px;
+  overflow:hidden;
+}
+
+.cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* track */
+
+.track{
+  min-width:0;
+}
+
+.track h2{
+  margin:0 0 3px;
+  font-size:15px;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.track p{
+  margin:0;
+  color:#888;
+  font-size:12px;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.track input{
+  width:100%;
+  accent-color:#fff;
+  cursor:pointer;
+}
+
+/* hide progress in mini player */
+
+.player .time{
+  display:none;
+}
+
+/* controls */
+
+.controls{
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+
+.controls button{
+  font-size:17px;
+  padding:9px;
+  background:transparent;
+}
+
+.controls .play{
+  width:45px;
+  height:45px;
+
+  background:#fff;
+  color:#090909;
+
+  font-size:18px;
+}
+
+/* =========================
+   FULL SCREEN PLAYER
+========================= */
+
+.player.full-player{
+  position:fixed;
+
+  inset:0;
+
+  width:100%;
+  height:100vh;
+
+  margin:0;
+  padding:45px 25px 35px;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+
+  gap:20px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #4b303c 0%,
+      #1b1518 38%,
+      #090909 75%
+    );
+
+  border:0;
+  border-radius:0;
+
+  cursor:default;
+
+  z-index:9999;
+}
+
+/* full player cover */
+
+.full-player .cover{
+  width:min(390px,72vw);
+  height:min(390px,72vw);
+
+  border-radius:8px;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.6);
+
+  font-size:45px;
+}
+
+/* full player track */
+
+.full-player .track{
+  width:min(600px,90vw);
+}
+
+.full-player .track h2{
+  font-size:27px;
+  margin-top:5px;
+}
+
+.full-player .track p{
+  font-size:15px;
+  color:#aaa;
+  margin-bottom:18px;
+}
+
+.full-player .track input{
+  margin-top:5px;
+}
+
+.full-player .time{
+  display:flex;
+
+  justify-content:space-between;
+
+  color:#999;
+  font-size:11px;
+}
+
+/* full controls */
+
+.full-player .controls{
+  width:min(600px,90vw);
+
+  justify-content:center;
+
+  gap:20px;
+}
+
+.full-player .controls button{
+  font-size:25px;
+  width:50px;
+  height:50px;
+}
+
+.full-player .controls .play{
+  width:65px;
+  height:65px;
+  font-size:27px;
+}
+
+/* minimize button */
+
+.player-minimize{
+  position:absolute;
+
+  top:20px;
+  left:20px;
+
+  width:45px;
+  height:45px;
+
+  display:grid;
+  place-items:center;
+
+  background:rgba(255,255,255,.1);
+
+  font-size:25px;
+}
+
+/* =========================
+   SONG LIST
+========================= */
+
+.list{
+  margin-top:35px;
+}
+
+.listhead{
+  display:flex;
+  justify-content:space-between;
+
+  color:#aaa;
+  margin-bottom:8px;
+}
+
+.listhead span:first-child{
+  color:#fff;
+  font-weight:700;
+}
+
+.song{
+  display:grid;
+
+  grid-template-columns:45px 1fr auto;
+
+  align-items:center;
+
+  padding:15px 8px;
+
+  border-bottom:1px solid #191919;
+
+  cursor:pointer;
+
+  transition:.15s;
+}
+
+.song:hover{
+  background:#111;
+}
+
+.num{
+  color:#666;
+  font-size:12px;
+}
+
+.song b{
+  font-size:14px;
+}
+
+.song small{
+  display:block;
+  color:#666;
+  margin-top:3px;
+}
+
+.song .arrow{
+  color:#555;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
 .search-box{
   width:100%;
   max-width:700px;
@@ -13,13 +414,19 @@
 
 .search-box input{
   width:100%;
-  box-sizing:border-box;
+
   padding:15px 20px;
+
   border-radius:30px;
+
   border:1px solid rgba(255,255,255,.15);
+
   background:#171717;
+
   color:white;
+
   font-size:16px;
+
   outline:none;
 }
 
@@ -29,4 +436,114 @@
 
 .search-box input:focus{
   border-color:#fff;
+}
+
+/* credit */
+
+.credit{
+  font-size:12px;
+  opacity:.55;
+
+  margin-left:auto;
+  margin-right:12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px){
+
+  main{
+    padding:20px 15px 110px;
+  }
+
+  .hero{
+    padding:70px 0 35px;
+  }
+
+  .hero h1{
+    letter-spacing:-3px;
+  }
+
+  /* mini player */
+
+  .player{
+    height:70px;
+
+    padding:7px 10px;
+
+    grid-template-columns:50px 1fr auto;
+
+    gap:9px;
+  }
+
+  .cover{
+    width:50px;
+    height:50px;
+
+    border-radius:5px;
+  }
+
+  .track h2{
+    font-size:13px;
+  }
+
+  .track p{
+    font-size:11px;
+  }
+
+  .controls{
+    gap:2px;
+  }
+
+  .controls button{
+    padding:7px;
+    font-size:15px;
+  }
+
+  .controls .play{
+    width:40px;
+    height:40px;
+  }
+
+  /* full screen */
+
+  .player.full-player{
+    padding:55px 20px 30px;
+  }
+
+  .full-player .cover{
+    width:min(330px,82vw);
+    height:min(330px,82vw);
+  }
+
+  .full-player .track{
+    width:90vw;
+  }
+
+  .full-player .track h2{
+    font-size:22px;
+  }
+
+  .full-player .controls{
+    width:90vw;
+    gap:12px;
+  }
+
+  .full-player .controls button{
+    width:45px;
+    height:45px;
+    font-size:20px;
+  }
+
+  .full-player .controls .play{
+    width:60px;
+    height:60px;
+  }
+
+  .player-minimize{
+    top:15px;
+    left:15px;
+  }
 }
