@@ -58,9 +58,67 @@ const searchInput = document.querySelector("#search");
 searchInput.addEventListener("input", () => {
   const query = searchInput.value.toLowerCase().trim();
 
-  document.querySelectorAll(".song").forEach(song => {
-    const text = song.textContent.toLowerCase();
+  // Search empty hai to current category normal dikhao
+  if (!query) {
+    renderSongs();
+    return;
+  }
 
-    song.style.display = text.includes(query) ? "" : "none";
+  // Sabhi categories ke songs search karo
+  const results = [];
+
+  vibes.forEach((vibe, vibeIndex) => {
+    vibe.songs.forEach((song, songIndex) => {
+      const songName = song[0].toLowerCase();
+      const artistName = song[1].toLowerCase();
+
+      if (
+        songName.includes(query) ||
+        artistName.includes(query) ||
+        vibe.name.toLowerCase().includes(query)
+      ) {
+        results.push({
+          vibeIndex,
+          songIndex,
+          vibeName: vibe.name,
+          song
+        });
+      }
+    });
   });
+
+  // Results screen par dikhao
+  songsEl.innerHTML = results.length
+    ? results.map((result, index) => `
+        <div class="song" onclick="playSearchResult(${result.vibeIndex},${result.songIndex})">
+          <div>
+            <strong>${String(index + 1).padStart(2, "0")}</strong>
+          </div>
+          <div>
+            <b>${result.song[0]}</b>
+            <small>${result.song[1]} • ${result.vibeName}</small>
+          </div>
+          <span>▶</span>
+        </div>
+      `).join("")
+    : `
+      <div class="song">
+        <div>
+          <b>No song found</b>
+          <small>Try another song or artist</small>
+        </div>
+      </div>
+    `;
+
+  document.querySelector("#listName").textContent = "Search Results";
+  document.querySelector("#count").textContent =
+    `${results.length} ${results.length === 1 ? "track" : "tracks"}`;
 });
+
+function playSearchResult(vibeIndex, songIndex) {
+  currentVibe = vibeIndex;
+  currentSong = songIndex;
+
+  renderSongs();
+  loadSong(songIndex);
+}
