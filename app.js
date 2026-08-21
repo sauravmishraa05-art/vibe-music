@@ -83,7 +83,15 @@ player.addEventListener("click", (e) => {
   openFullPlayer();
 });
 vibes.forEach((v,i)=>{const b=document.createElement("button");b.className="vibe";b.innerHTML=`${v.emoji} ${v.name}`;b.onclick=()=>selectVibe(i);vibesEl.appendChild(b)});
-function selectVibe(i){currentVibe=i;currentSong=0;document.querySelectorAll(".vibe").forEach((b,j)=>b.classList.toggle("active",j===i));document.querySelector("#listName").textContent=vibes[i].name;document.querySelector("#count").textContent=`${vibes[i].songs.length} tracks`;renderSongs();loadSong(0,false)}
+function selectVibe(i){
+  currentVibe = i;
+
+  document.querySelectorAll(".vibe").forEach((b,j)=>{
+    b.classList.toggle("active", j === i);
+  });
+
+  renderSongs();
+}
 function renderSongs(){songsEl.innerHTML=vibes[currentVibe].songs.map((s,i)=>`<div class="song" onclick="loadSong(${i},true)"><span class="num">${String(i+1).padStart(2,"0")}</span><div><b>${s[0]}</b><small>${s[1]}</small></div><span class="arrow">▶</span></div>`).join("")}
 function loadSong(i,autoplay=true){currentSong=i;const s=vibes[currentVibe].songs[i];audio.src=s[2];document.querySelector("#title").textContent=s[0];document.querySelector("#artist").textContent=s[1];if(autoplay)audio.play().catch(()=>{});document.querySelector("#play").textContent=audio.paused?"▶":"Ⅱ"}
 document.querySelector("#play").onclick=()=>{if(!audio.src)return;if(audio.paused)audio.play();else audio.pause();document.querySelector("#play").textContent=audio.paused?"▶":"Ⅱ"};
