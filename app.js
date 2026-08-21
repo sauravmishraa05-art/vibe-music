@@ -53,3 +53,14 @@ document.querySelector("#progress").oninput=e=>{if(audio.duration)audio.currentT
 document.querySelector("#share").onclick=async()=>{try{await navigator.share({title:"VIBE",text:"Pick a vibe. Press play.",url:location.href})}catch(e){await navigator.clipboard?.writeText(location.href);alert("Link copied!")}};
 function fmt(s){if(!isFinite(s))return"0:00";return Math.floor(s/60)+":"+String(Math.floor(s%60)).padStart(2,"0")}
 selectVibe(0);
+const searchInput = document.querySelector("#search");
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase().trim();
+
+  document.querySelectorAll(".song").forEach(song => {
+    const text = song.textContent.toLowerCase();
+
+    song.style.display = text.includes(query) ? "" : "none";
+  });
+});
