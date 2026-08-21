@@ -16,6 +16,10 @@ const vibes=[
   ["Lut Gayani Pyaar Mai","Your Artist","audio/Lut Gayani Pyaar Mai.mp3"],
   ]}, 
 {name:"Haryanvi",emoji:"🟡",songs:[
+  ["Ram Bachaye","Your Artist","audio/Ram Bachaye.mp3"],
+  ["Mukadma","Your Artist","audio/Mukadma.mp3"],
+  ["Pistol Premi","Your Artist","audio/Pistol Premi.mp3"],
+  ["Rohtak 3","Your Artist","audio/Rohtak 3.mp3"]
 ]},
 {name:"Punjabi",emoji:"🔵",songs:[]},
 {name:"Hindi",emoji:"🟣",songs:[]},
