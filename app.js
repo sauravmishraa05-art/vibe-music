@@ -26,7 +26,12 @@ const vibes=[
   ["Cheli","Your Artist","audio/Cheli.mp3"],
   ["CIRCLE","Your Artist","audio/CIRCLE.mp3"],
   ["La La La","Your Artist","audio/La La La.mp3"],
-  ["Degree","your Artist","audio/Degree.mp3"]
+  ["Degree","your Artist","audio/Degree.mp3"],
+  ["Pistol 4-5 Ka","Your Artist","audio/Pistol 4-5 Ka.mp3"],
+  ["Vakaalat","Your Artist","audio/Vakaalat.mp3"],
+  ["Blender","Your Artist","audio/Blender.mp3"],
+  ["4 Aadmi","Your Artist","audio/4 Aadmi.mp3"],
+  ["Naami Gunde","Your Artist","audio/Naami Gunde.mp3"]
 ]},
 {name:"Punjabi",emoji:"🔵",songs:[]},
 {name:"Hindi",emoji:"🟣",songs:[]},
