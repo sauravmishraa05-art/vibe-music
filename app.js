@@ -67,7 +67,12 @@ function minimizePlayer(){
 
 minimizeBtn.addEventListener("click", (e) => {
   e.stopPropagation();
-  minimizePlayer();
+
+  if (document.body.classList.contains("player-open")) {
+    minimizePlayer();
+  } else {
+    openFullPlayer();
+  }
 });
 vibes.forEach((v,i)=>{const b=document.createElement("button");b.className="vibe";b.innerHTML=`${v.emoji} ${v.name}`;b.onclick=()=>selectVibe(i);vibesEl.appendChild(b)});
 function selectVibe(i){currentVibe=i;currentSong=0;document.querySelectorAll(".vibe").forEach((b,j)=>b.classList.toggle("active",j===i));document.querySelector("#listName").textContent=vibes[i].name;document.querySelector("#count").textContent=`${vibes[i].songs.length} tracks`;renderSongs();loadSong(0,false)}
