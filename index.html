@@ -31,17 +31,41 @@
   <section id="vibes" class="vibes"></section>
 
   <section class="player" id="player">
-    <div class="cover" id="cover">♪</div>
-    <div class="track">
-      <div class="now">NOW PLAYING</div>
-      <h2 id="title">Choose a vibe</h2><p id="artist">Your playlist is waiting.</p>
-      <input id="progress" type="range" min="0" max="100" value="0">
-      <div class="time"><span id="current">0:00</span><span id="duration">0:00</span></div>
+
+  <button class="player-minimize" id="minimize" aria-label="Minimize">⌄</button>
+
+  <div class="cover" id="cover">♪</div>
+
+  <div class="track">
+    <div class="now">NOW PLAYING</div>
+
+    <h2 id="title">Choose a vibe</h2>
+
+    <p id="artist">Your playlist is waiting.</p>
+
+    <input
+      id="progress"
+      type="range"
+      min="0"
+      max="100"
+      value="0"
+    >
+
+    <div class="time">
+      <span id="current">0:00</span>
+      <span id="duration">0:00</span>
     </div>
-    <div class="controls">
-      <button id="prev">⏮</button><button class="play" id="play">▶</button><button id="next">⏭</button>
-    </div>
-  </section>
+  </div>
+
+  <div class="controls">
+    <button id="prev">⏮</button>
+
+    <button class="play" id="play">▶</button>
+
+    <button id="next">⏭</button>
+  </div>
+
+</section>
 
   <section class="list">
     <div class="listhead"><span id="listName">Featured</span><span id="count">0 tracks</span></div>
