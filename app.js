@@ -98,56 +98,18 @@ function loadSong(i, autoplay = true) {
 
   const s = vibes[currentVibe].songs[i];
 
-  audio.pause();
   audio.src = s[2];
-  audio.load();
 
   document.querySelector("#title").textContent = s[0];
   document.querySelector("#artist").textContent = s[1];
 
-  document.querySelector("#play").textContent = "▶";
-
-  if ("mediaSession" in navigator) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: s[0],
-      artist: s[1],
-      album: "VIBE Music",
-      artwork: [
-        {
-          src: "logo.png",
-          sizes: "512x512",
-          type: "image/png"
-        }
-      ]
-    });
-
-    navigator.mediaSession.setActionHandler("nexttrack", () => {
-      const nextIndex =
-        (currentSong + 1) % vibes[currentVibe].songs.length;
-
-      loadSong(nextIndex, true);
-    });
-
-    navigator.mediaSession.setActionHandler("previoustrack", () => {
-      const prevIndex =
-        (currentSong - 1 + vibes[currentVibe].songs.length) %
-        vibes[currentVibe].songs.length;
-
-      loadSong(prevIndex, true);
-    });
-  }
-
   if (autoplay) {
-    audio.play()
-      .then(() => {
-        document.querySelector("#play").textContent = "Ⅱ";
-      })
-      .catch(() => {
-        document.querySelector("#play").textContent = "▶";
-      });
+    audio.play().catch(() => {});
   }
-}
 
+  document.querySelector("#play").textContent =
+    audio.paused ? "▶" : "Ⅱ";
+}
 
 /* PLAY / PAUSE */
 document.querySelector("#play").onclick = () => {
@@ -204,12 +166,6 @@ audio.addEventListener("pause", () => {
 
   if ("mediaSession" in navigator) {
     navigator.mediaSession.playbackState = "paused";
-  }
-});
-  if (nextIndex < vibes[currentVibe].songs.length) {
-    loadSong(nextIndex, true);
-  } else {
-    loadSong(0, true);
   }
 });
 audio.addEventListener("play",()=>document.querySelector("#play").textContent="Ⅱ");
