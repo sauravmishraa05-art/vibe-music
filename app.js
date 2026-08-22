@@ -149,7 +149,24 @@ audio.onended = () => {
 
     loadSong(nextIndex, true);
 };
+if ("mediaSession" in navigator) {
 
+  navigator.mediaSession.setActionHandler("nexttrack", () => {
+    const nextIndex =
+      (currentSong + 1) % vibes[currentVibe].songs.length;
+
+    loadSong(nextIndex, true);
+  });
+
+  navigator.mediaSession.setActionHandler("previoustrack", () => {
+    const prevIndex =
+      (currentSong - 1 + vibes[currentVibe].songs.length) %
+      vibes[currentVibe].songs.length;
+
+    loadSong(prevIndex, true);
+  });
+
+}
 
 /* PLAY / PAUSE UI */
 audio.addEventListener("play", () => {
