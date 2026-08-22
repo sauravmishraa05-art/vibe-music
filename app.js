@@ -99,6 +99,7 @@ function loadSong(i, autoplay = true) {
   const s = vibes[currentVibe].songs[i];
 
   audio.src = s[2];
+  audio.load();
 
   document.querySelector("#title").textContent = s[0];
   document.querySelector("#artist").textContent = s[1];
@@ -142,12 +143,11 @@ document.querySelector("#prev").onclick = () => {
 };
 
 
-/* SONG FINISHED → NEXT SONG AUTOMATICALLY */
 audio.onended = () => {
-  const nextIndex =
-    (currentSong + 1) % vibes[currentVibe].songs.length;
+    const nextIndex =
+        (currentSong + 1) % vibes[currentVibe].songs.length;
 
-  loadSong(nextIndex, true);
+    loadSong(nextIndex, true);
 };
 
 
