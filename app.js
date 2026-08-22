@@ -93,11 +93,54 @@ function selectVibe(i){
   renderSongs();
 }
 function renderSongs(){songsEl.innerHTML=vibes[currentVibe].songs.map((s,i)=>`<div class="song" onclick="loadSong(${i},true)"><span class="num">${String(i+1).padStart(2,"0")}</span><div><b>${s[0]}</b><small>${s[1]}</small></div><span class="arrow">▶</span></div>`).join("")}
-function loadSong(i,autoplay=true){currentSong=i;const s=vibes[currentVibe].songs[i];audio.src=s[2];document.querySelector("#title").textContent=s[0];document.querySelector("#artist").textContent=s[1];if(autoplay)audio.play().catch(()=>{});document.querySelector("#play").textContent=audio.paused?"▶":"Ⅱ"}
+function loadSong(i, autoplay = true) {
+  currentSong = i;
+
+  const s = vibes[currentVibe].songs[i];
+
+  audio.src = s[2];
+
+  document.querySelector("#title").textContent = s[0];
+  document.querySelector("#artist").textContent = s[1];
+
+  if (autoplay) {
+    audio.play().catch(() => {});
+  }
+
+  document.querySelector("#play").textContent =
+    audio.paused ? "▶" : "Ⅱ";
+
+  if ("mediaSession" in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: s[0],
+      artist: s[1],
+      album: "VIBE Music",
+      artwork: [
+        {
+          src: "logo.png",
+          sizes: "512x512",
+          type: "image/png"
+        }
+      ]
+    });
+
+    navigator.mediaSession.playbackState = autoplay
+      ? "playing"
+      : "paused";
+  }
+}
 document.querySelector("#play").onclick=()=>{if(!audio.src)return;if(audio.paused)audio.play();else audio.pause();document.querySelector("#play").textContent=audio.paused?"▶":"Ⅱ"};
 document.querySelector("#next").onclick=()=>loadSong((currentSong+1)%vibes[currentVibe].songs.length,true);
 document.querySelector("#prev").onclick=()=>loadSong((currentSong-1+vibes[currentVibe].songs.length)%vibes[currentVibe].songs.length,true);
-audio.addEventListener("ended",()=>document.querySelector("#next").click());
+audio.addEventListener("ended", () => {
+  const nextIndex = currentSong + 1;
+
+  if (nextIndex < vibes[currentVibe].songs.length) {
+    loadSong(nextIndex, true);
+  } else {
+    loadSong(0, true);
+  }
+});
 audio.addEventListener("play",()=>document.querySelector("#play").textContent="Ⅱ");
 audio.addEventListener("pause",()=>document.querySelector("#play").textContent="▶");
 audio.addEventListener("loadedmetadata",()=>document.querySelector("#duration").textContent=fmt(audio.duration));
