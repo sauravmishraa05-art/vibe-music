@@ -98,17 +98,14 @@ function loadSong(i, autoplay = true) {
 
   const s = vibes[currentVibe].songs[i];
 
+  audio.pause();
   audio.src = s[2];
+  audio.load();
 
   document.querySelector("#title").textContent = s[0];
   document.querySelector("#artist").textContent = s[1];
 
-  if (autoplay) {
-    audio.play().catch(() => {});
-  }
-
-  document.querySelector("#play").textContent =
-    audio.paused ? "▶" : "Ⅱ";
+  document.querySelector("#play").textContent = "▶";
 
   if ("mediaSession" in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
@@ -124,17 +121,91 @@ function loadSong(i, autoplay = true) {
       ]
     });
 
-    navigator.mediaSession.playbackState = autoplay
-      ? "playing"
-      : "paused";
+    navigator.mediaSession.setActionHandler("nexttrack", () => {
+      const nextIndex =
+        (currentSong + 1) % vibes[currentVibe].songs.length;
+
+      loadSong(nextIndex, true);
+    });
+
+    navigator.mediaSession.setActionHandler("previoustrack", () => {
+      const prevIndex =
+        (currentSong - 1 + vibes[currentVibe].songs.length) %
+        vibes[currentVibe].songs.length;
+
+      loadSong(prevIndex, true);
+    });
+  }
+
+  if (autoplay) {
+    audio.play()
+      .then(() => {
+        document.querySelector("#play").textContent = "Ⅱ";
+      })
+      .catch(() => {
+        document.querySelector("#play").textContent = "▶";
+      });
   }
 }
-document.querySelector("#play").onclick=()=>{if(!audio.src)return;if(audio.paused)audio.play();else audio.pause();document.querySelector("#play").textContent=audio.paused?"▶":"Ⅱ"};
-document.querySelector("#next").onclick=()=>loadSong((currentSong+1)%vibes[currentVibe].songs.length,true);
-document.querySelector("#prev").onclick=()=>loadSong((currentSong-1+vibes[currentVibe].songs.length)%vibes[currentVibe].songs.length,true);
-audio.addEventListener("ended", () => {
-  const nextIndex = currentSong + 1;
 
+
+/* PLAY / PAUSE */
+document.querySelector("#play").onclick = () => {
+  if (!audio.src) return;
+
+  if (audio.paused) {
+    audio.play().catch(() => {});
+  } else {
+    audio.pause();
+  }
+};
+
+
+/* NEXT */
+document.querySelector("#next").onclick = () => {
+  const nextIndex =
+    (currentSong + 1) % vibes[currentVibe].songs.length;
+
+  loadSong(nextIndex, true);
+};
+
+
+/* PREVIOUS */
+document.querySelector("#prev").onclick = () => {
+  const prevIndex =
+    (currentSong - 1 + vibes[currentVibe].songs.length) %
+    vibes[currentVibe].songs.length;
+
+  loadSong(prevIndex, true);
+};
+
+
+/* SONG FINISHED → NEXT SONG AUTOMATICALLY */
+audio.onended = () => {
+  const nextIndex =
+    (currentSong + 1) % vibes[currentVibe].songs.length;
+
+  loadSong(nextIndex, true);
+};
+
+
+/* PLAY / PAUSE UI */
+audio.addEventListener("play", () => {
+  document.querySelector("#play").textContent = "Ⅱ";
+
+  if ("mediaSession" in navigator) {
+    navigator.mediaSession.playbackState = "playing";
+  }
+});
+
+
+audio.addEventListener("pause", () => {
+  document.querySelector("#play").textContent = "▶";
+
+  if ("mediaSession" in navigator) {
+    navigator.mediaSession.playbackState = "paused";
+  }
+});
   if (nextIndex < vibes[currentVibe].songs.length) {
     loadSong(nextIndex, true);
   } else {
